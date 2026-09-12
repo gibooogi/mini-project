@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: azure;
+            padding: 0;
+            margin: 0;
+            font-family: "Roboto Slab", serif;
+        }
+        header {
+            background: rgb(131, 56, 180);
+
+            background: linear-gradient(
+                90deg,
+                rgba(131, 58, 180, 1) 0%,
+                rgba(253, 29, 29, 1) 50%,
+                rgba(252, 176, 69, 1) 100%
+            );
+
+            padding: 20px;
+        }
+
+        .headerContainer {
+            display: flex;
+            max-width: 1000px;
+            margin: auto;
+            align-items: center;
+        }
+
+        .holderImgProfile {
+            flex: 1;
+            text-align: center;
+        }
+
+        .imgProfile {
+            width: 150px;
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 4px solid white;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+
+            transition: 0.3s;
+        }
+
+        .imgProfile:hover {
+            transform: scale(1.05);
+        }
+
+        .holderDetailProfile {
+            flex: 2;
+        }
+
+        .nameProfile {
+            font-size: 32px;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .titleProfile {
+            color: azure;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .button {
+            position: relative;
+            overflow: hidden;
+
+            border: none;
+
+            padding: 10px 18px;
+
+            margin: 10px 10px 0 0;
+
+            font-family: "Roboto Slab", serif;
+
+            border-radius: 40px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .button.download {
+            background-color:cornflowerblue;
+            color: white;
+        }
+
+        .button.hire {
+            background-color:cornflowerblue;
+            color: white;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+        .ripple {
+            position: absolute;
+
+            border-radius: 50%;
+
+            transform: scale(0);
+
+            animation: ripple-animation 0.6s linear;
+
+            background: rgba(255, 255, 255, 0.7);
+
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+
+            to {
+                transform: scale(4);
+
+                opacity: 0;
+            }
+
+        }
+        main {
+            max-width: 1000px;
+
+            margin: auto;
+
+            background-color: white;
+
+            padding: 20px 30px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        .sectionTitle {
+            font-size: 25px;
+
+            font-weight: 600;
+
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            color: #333;
+        }
+        .skill {
+            margin-bottom: 18px;
+        }
+
+        .skillName {
+            font-weight: 600;
+
+            margin-bottom: 6px;
+        }
+
+        .skillBar {
+            width: 100%;
+
+            height: 15px;
+
+            background-color: #eeeeee;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .skillProgress {
+            height: 100%;
+
+            border-radius: 20px;
+
+            transition: width 1s ease;
+        }
+
+        .html {
+            width: 85%;
+
+            background-color: #269ca7;
+        }
+
+        .css {
+            width: 80%;
+
+            background-color: #e99a6c;
+        }
+
+        .javascript {
+            width: 90%;
+
+            background-color: #c56bd9;
+        }
+        .workExperience {
+            list-style-type: square;
+
+            padding-left: 30px;
+        }
+
+        .workExperience li {
+            background-color: #f5f5f5;
+
+            margin-bottom: 15px;
+
+            padding: 20px;
+
+            line-height: 1.5;
+        }
+
+        .workTitle {
+            font-weight: 600;
+
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #1eb574;
+
+            font-weight: 600;
+        }
+        @media (max-width: 700px) {
+
+            .headerContainer {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .holderDetailProfile {
+                margin-top: 20px;
+            }
+
+            .nameProfile {
+                font-size: 27px;
+            }
+
+            .titleProfile {
+                font-size: 17px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="headerContainer">
+
+            <div class="holderImgProfile">
+
+                <img
+                    class="imgProfile"
+                    src="img/foto-aku.jpeg"
+                    alt="Foto Anggita"
+                >
+
+            </div>
+
+
+            <div class="holderDetailProfile">
+
+                <div class="nameProfile">
+                    Anggita April
+                </div>
+
+                <div class="titleProfile">
+                    Graphic Designer & Web Developer
+                </div>
+
+
+                <div>
+
+                    <button class="button download">
+                        Download CV
+                    </button>
+
+                    <button class="button hire">
+                        Hire Me
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section>
+
+            <div class="sectionTitle">
+                About Me
+            </div>
+
+            <div class="description">
+
+                Hello! I'm Anggita April. I am an Informatics student
+                who is interested in Web Development, UI/UX Design,
+                and Graphic Design. I enjoy learning new things and
+                creating useful and attractive digital experiences.
+
+            </div>
+
+        </section>
+        <section>
+
+            <div class="sectionTitle">
+                Professional Skills
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skillName">
+                    HTML
+                </div>
+
+                <div class="skillBar">
+
+                    <div class="skillProgress html"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skillName">
+                    CSS
+                </div>
+
+                <div class="skillBar">
+
+                    <div class="skillProgress css"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="skill">
+
+                <div class="skillName">
+                    Javascript
+                </div>
+
+                <div class="skillBar">
+
+                    <div class="skillProgress javascript"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- WORKING EXPERIENCE -->
+
+        <section>
+
+            <div class="sectionTitle">
+                Working Experience
+            </div>
+
+
+            <ul class="workExperience">
+
+
+                <li>
+
+                    <div class="workTitle">
+
+                        Frontend Developer at
+                        <span class="company">
+                            Creative Agency
+                        </span>
+
+                    </div>
+
+                    Leverage agile frameworks to provide a robust
+                    synopsis for high level overviews. Iterative
+                    approaches to corporate strategy foster
+                    collaborative thinking to further the overall
+                    value proposition.
+
+                </li>
+
+
+
+                <li>
+
+                    <div class="workTitle">
+
+                        Web Designer at
+                        <span class="company">
+                            Digital Studio
+                        </span>
+
+                    </div>
+
+                    Designed responsive websites and created
+                    attractive user interfaces based on user needs.
+
+                </li>
+
+
+
+                <li>
+
+                    <div class="workTitle">
+
+                        Graphic Designer at
+                        <span class="company">
+                            Creative Team
+                        </span>
+
+                    </div>
+
+                    Created digital designs, social media content,
+                    and visual materials for various projects.
+
+                </li>
+
+
+            </ul>
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+        const buttons = document.querySelectorAll(".button");
+
+
+        buttons.forEach(button => {
+
+            button.addEventListener("click", function(event) {
+
+                const circle = document.createElement("span");
+
+                const diameter = Math.max(
+                    button.clientWidth,
+                    button.clientHeight
+                );
+
+                const radius = diameter / 2;
+
+
+                circle.style.width = circle.style.height =
+                    `${diameter}px`;
+
+
+                circle.style.left =
+                    `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+
+
+                circle.style.top =
+                    `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+
+
+                circle.classList.add("ripple");
+
+
+                const oldRipple =
+                    button.querySelector(".ripple");
+
+
+                if (oldRipple) {
+                    oldRipple.remove();
+                }
+
+
+                button.appendChild(circle);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
